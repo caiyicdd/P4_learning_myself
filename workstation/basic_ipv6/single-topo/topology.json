@@ -1,0 +1,12 @@
+{
+    "hosts": {
+        "h1": {"ip": "fe08::1/128", "mac": "08:00:00:00:01:11"},
+        "h2": {"ip": "fe08::2/128", "mac": "08:00:00:00:02:22"}
+    },
+    "switches": {
+        "s1": { "runtime_json" : "single-topo/s1-runtime.json" }
+    },
+    "links": [
+        ["h1", "s1-p1"], ["h2", "s1-p2"]
+    ]
+}
