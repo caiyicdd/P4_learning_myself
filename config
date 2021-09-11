@@ -4,7 +4,7 @@
 	bare = false
 	logallrefupdates = true
 [remote "origin"]
-	url = git://github.com/caiyicdd/P4_learning_myself.git
+	url = https://github.com/caiyicdd/P4_learning_myself.git
 	fetch = +refs/heads/*:refs/remote/origin/*
 [branch "master"]
 	remote = origin
