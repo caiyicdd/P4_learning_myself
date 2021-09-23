@@ -1,0 +1,125 @@
+{
+  "target": "bmv2",
+  "p4info": "build/basic.p4.p4info.txt",
+  "bmv2_json": "build/basic.json",
+  "table_entries": [
+    {
+      "table": "MyIngress.ipv6_lpm",
+      "default_action": true,
+      "action_name": "MyIngress.drop",
+      "action_params": { }
+    },
+    {
+      "table": "MyIngress.ipv6_lpm",
+      "match": {
+        "hdr.ipv6.dstAddr": ["fe08::1", 128]
+      },
+      "action_name": "MyIngress.ipv6_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:01:00",
+        "port": 1
+      }
+    },
+    {
+      "table": "MyIngress.ipv6_lpm",
+      "match": {
+        "hdr.ipv6.dstAddr": ["fe08::3", 128]
+      },
+      "action_name": "MyIngress.ipv6_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:03:33",
+        "port": 3
+      }
+    },
+    {
+      "table": "MyIngress.ipv6to4_lpm",
+      "default_action": true,
+      "action_name": "MyIngress.drop",
+      "action_params": { }
+    },
+    {
+      "table": "MyIngress.ipv6to4_lpm",
+      "match": {
+        "hdr.ipv6.dstAddr": ["fe08::2", 128],
+        "hdr.ipv6.srcAddr": "fe08::1"
+      },
+      "action_name": "MyIngress.ipv64_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:03:00",
+        "srcip4":"10.0.1.1",
+        "dstip4":"10.0.2.2",
+        "port": 2
+      }
+    },
+    {
+      "table": "MyIngress.ipv6to4_lpm",
+      "match": {
+        "hdr.ipv6.dstAddr": ["fe08::2", 128],
+        "hdr.ipv6.srcAddr": "fe08::3"
+      },
+      "action_name": "MyIngress.ipv64_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:03:00",
+        "srcip4": "10.0.3.3",
+        "dstip4": "10.0.2.2",
+        "port": 2
+      }
+    },
+    {
+      "table": "MyIngress.ipv6to4_lpm",
+      "match": {
+        "hdr.ipv6.dstAddr": ["fe08::4", 128],
+        "hdr.ipv6.srcAddr": "fe08::1"
+      },
+      "action_name": "MyIngress.ipv64_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:03:00",
+        "srcip4":"10.0.1.1",
+        "dstip4":"10.0.4.4",
+        "port": 2
+      }
+    },
+    {
+      "table": "MyIngress.ipv6to4_lpm",
+      "match": {
+        "hdr.ipv6.dstAddr": ["fe08::4", 128],
+        "hdr.ipv6.srcAddr": "fe08::3"
+      },
+      "action_name": "MyIngress.ipv64_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:03:00",
+        "srcip4":"10.0.3.3",
+        "dstip4":"10.0.4.4",
+        "port": 2
+      }
+    },
+    {
+      "table": "MyIngress.ipv4_lpm",
+      "default_action": true,
+      "action_name": "MyIngress.drop",
+      "action_params": { }
+    },
+    {
+      "table": "MyIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.2.2", 32]
+      },
+      "action_name": "MyIngress.ipv4_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:03:00",
+        "port": 2
+      }
+    },
+    {
+      "table": "MyIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.4.4", 32]
+      },
+      "action_name": "MyIngress.ipv4_forward",
+      "action_params": {
+        "dstAddr": "08:00:00:00:03:00",
+        "port": 2
+      }
+    }
+  ]
+}
