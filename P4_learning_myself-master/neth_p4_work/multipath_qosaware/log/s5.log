@@ -1,0 +1,7 @@
+Warning: you requested the nanomsg event logger, but bmv2 was compiled without -DBMELOG, and the event logger cannot be activated
+Calling target program-options parser
+[11:48:50.517] [bmv2] [D] [thread 19238] Set default default entry for table 'MyIngress.ipv6_tbl': NoAction - 
+[11:48:50.518] [bmv2] [D] [thread 19238] Set default default entry for table 'MyIngress.ipv4_tbl': NoAction - 
+[11:48:50.518] [bmv2] [D] [thread 19238] Set default default entry for table 'MyIngress.ipv6_lpm': MyIngress.drop - 
+[11:48:50.535] [bmv2] [I] [thread 19238] Starting Thrift server on port 9094
+[11:48:50.535] [bmv2] [I] [thread 19238] Thrift server was started

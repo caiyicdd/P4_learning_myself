@@ -1,0 +1,39 @@
+{
+"ipv4_links":{
+	"s1":{
+		"h1":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null},
+		"h2":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null},
+		"s2":{"bw":10,"delay":50,"loss":1,"weight":10,"queue_length":null},
+		"s3":{"bw":20,"delay":10,"loss":0.5,"weight":5,"queue_length":null}
+	},
+	"s2":{
+		"s4":{"bw":100,"delay":50,"loss":1,"weight":20,"queue_length":null}
+	},
+	"s3":{
+		"s4":{"bw":50,"delay":10,"loss":0.5,"weight":20,"queue_length":null}
+	},
+	"s4":{
+		"h3":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null},
+		"h4":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null}
+	}
+},
+
+"ipv6_links":{
+	"s1":{
+		"h1":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null},
+		"h2":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null},
+		"s2":{"bw":10,"delay":50,"loss":1,"weight":10,"queue_length":null},
+		"s3":{"bw":20,"delay":10,"loss":0.5,"weight":5,"queue_length":null}
+	},
+	"s2":{
+		"s4":{"bw":100,"delay":50,"loss":1,"weight":10,"queue_length":null}
+	},
+	"s3":{
+		"s4":{"bw":50,"delay":10,"loss":0.5,"weight":20,"queue_length":null}
+	},
+	"s4":{
+		"h3":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null},
+		"h4":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null}
+	}
+	}
+}

@@ -1,0 +1,80 @@
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Setting default action of ipv4_tbl
+action:              drop
+runtime data:        
+RuntimeCmd: Setting default action of ipv6_tbl
+action:              drop
+runtime data:        
+RuntimeCmd: Setting default action of ipv6_tbl
+action:              drop
+runtime data:        
+RuntimeCmd: Adding entry to lpm match table ipv4_tbl
+match key:           LPM-0a:00:01:01/32
+action:              ipv4_forward
+runtime data:        00:00:0a:00:01:01	00:02
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table ipv4_tbl
+match key:           LPM-0a:00:02:03/32
+action:              ipv4_forward
+runtime data:        00:00:0a:00:02:03	00:01
+Entry has been added with handle 1
+RuntimeCmd: Invalid runtime data: Error while parsing fe08::23/128 - Invalid IPv6 address
+RuntimeCmd: Invalid runtime data: Error while parsing fe08::23/128 - Invalid IPv6 address
+RuntimeCmd: Adding entry to lpm match table ipv6_tbl
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:43/128
+action:              ipv6_forward
+runtime data:        00:00:0a:00:23:03	00:03
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table ipv6_tbl
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:23/128
+action:              mov_ipv6_gre_header
+runtime data:        
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to lpm match table ipv6_lpm
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:43/128
+action:              ipv6_forward
+runtime data:        00:00:0a:00:23:03	00:03
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table ipv6_tbl
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:01/128
+action:              ipv6_forward
+runtime data:        00:00:0a:00:01:01	00:02
+Entry has been added with handle 2
+RuntimeCmd: Adding entry to lpm match table ipv6_tbl
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:03/128
+action:              ipv6_forward
+runtime data:        00:00:0a:00:02:03	00:01
+Entry has been added with handle 3
+RuntimeCmd: Adding entry to lpm match table ipv6_tbl
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:02/128
+action:              add_ipv6_gre_header
+runtime data:        0a:00:02:17	0a:00:04:22
+Entry has been added with handle 4
+RuntimeCmd: Adding entry to lpm match table ipv6_tbl
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:04/128
+action:              add_ipv6_gre_header
+runtime data:        0a:00:02:17	0a:00:04:22
+Entry has been added with handle 5
+RuntimeCmd: Adding entry to lpm match table ipv4_tbl
+match key:           LPM-0a:00:04:22/32
+action:              ipv4_forward
+runtime data:        00:00:0a:00:01:01	00:03
+Entry has been added with handle 2
+RuntimeCmd: Adding entry to lpm match table ipv4_tbl
+match key:           LPM-0a:00:02:17/32
+action:              mov_ipv4_gre_header
+runtime data:        
+Entry has been added with handle 3
+RuntimeCmd: Adding entry to lpm match table ipv6_lpm
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:01/128
+action:              ipv6_forward
+runtime data:        00:00:0a:00:05:02	00:02
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to lpm match table ipv6_lpm
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:03/128
+action:              ipv6_forward
+runtime data:        00:00:0a:00:05:02	00:01
+Entry has been added with handle 2
+RuntimeCmd: 

@@ -1,0 +1,28 @@
+table_set_default ipv4_tbl drop
+table_set_default ipv6_tbl drop
+table_set_default ipv6_tbl drop
+
+table_add ipv4_tbl ipv4_forward 10.0.1.1/32 => 00:00:0a:00:01:01 2
+table_add ipv4_tbl ipv4_forward 10.0.2.3/32 => 00:00:0a:00:02:03 1
+
+
+table_add ipv4_tbl add_ipv4_gre_header 10.0.5.2/32 => fe08::23/128 fe08::43/128
+table_add ipv4_tbl add_ipv4_gre_header 10.0.3.4/32 => fe08::23/128 fe08::43/128
+
+table_add ipv6_tbl ipv6_forward fe08::43/128 => 00:00:0a:00:23:3 3
+table_add ipv6_tbl mov_ipv6_gre_header fe08::23/128 => 
+table_add ipv6_lpm ipv6_forward fe08::43/128 => 00:00:0a:00:23:3 3
+
+
+table_add ipv6_tbl ipv6_forward fe08::1/128 => 00:00:0a:00:01:01 2
+table_add ipv6_tbl ipv6_forward fe08::3/128 => 00:00:0a:00:02:03 1
+
+table_add ipv6_tbl add_ipv6_gre_header fe08::2/128 => 10.0.2.23 10.0.4.34
+table_add ipv6_tbl add_ipv6_gre_header fe08::4/128 => 10.0.2.23 10.0.4.34
+
+table_add ipv4_tbl ipv4_forward 10.0.4.34/32 => 00:00:0a:00:01:01 3
+
+table_add ipv4_tbl mov_ipv4_gre_header 10.0.2.23/32 => 
+
+table_add ipv6_lpm ipv6_forward fe08::1/128 => 00:00:0a:00:05:02 2
+table_add ipv6_lpm ipv6_forward fe08::3/128 => 00:00:0a:00:05:02 1

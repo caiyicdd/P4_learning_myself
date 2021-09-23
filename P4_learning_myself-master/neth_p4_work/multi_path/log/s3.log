@@ -1,0 +1,118 @@
+Warning: you requested the nanomsg event logger, but bmv2 was compiled without -DBMELOG, and the event logger cannot be activated
+Calling target program-options parser
+[07:41:22.345] [bmv2] [D] [thread 16893] Set default default entry for table 'MyIngress.ipv6_tbl': NoAction - 
+[07:41:22.345] [bmv2] [D] [thread 16893] Set default default entry for table 'MyIngress.ipv4_tbl': NoAction - 
+[07:41:22.346] [bmv2] [D] [thread 16893] Set default default entry for table 'MyIngress.ipv6_lpm': MyIngress.drop - 
+Adding interface s3-eth1 as port 1
+[07:41:22.351] [bmv2] [D] [thread 16893] Adding interface s3-eth1 as port 1
+[07:41:22.375] [bmv2] [I] [thread 16893] Starting Thrift server on port 9092
+[07:41:22.375] [bmv2] [I] [thread 16893] Thrift server was started
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Processing packet received on port 1
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Parser 'parser': start
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Extracting header 'ethernet'
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Parser state 'start': key is 86dd
+[07:41:25.312] [bmv2] [T] [thread 16899] [0.0] [cxt 0] Bytes parsed: 14
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Parser 'parser' entering state 'parse_ipv6'
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Extracting header 'ipv6'
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Parser state 'parse_ipv6': key is 3a
+[07:41:25.312] [bmv2] [T] [thread 16899] [0.0] [cxt 0] Bytes parsed: 54
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Parser 'parser': end
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Pipeline 'ingress': start
+[07:41:25.312] [bmv2] [T] [thread 16899] [0.0] [cxt 0] basic.p4(305) Condition "hdr.ipv6.isValid()" (node_2) is true
+[07:41:25.312] [bmv2] [T] [thread 16899] [0.0] [cxt 0] Applying table 'MyIngress.ipv6_tbl'
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Table 'MyIngress.ipv6_tbl': miss
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Action entry is NoAction - 
+[07:41:25.312] [bmv2] [T] [thread 16899] [0.0] [cxt 0] Action NoAction
+[07:41:25.312] [bmv2] [T] [thread 16899] [0.0] [cxt 0] basic.p4(309) Condition "hdr.ipv4.isValid()" (node_4) is false
+[07:41:25.312] [bmv2] [T] [thread 16899] [0.0] [cxt 0] basic.p4(312) Condition "hdr.ipv6.isValid() && (meta.is_ingress_border == 1 || meta.is_egress_border == 1)" (node_6) is false
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Pipeline 'ingress': end
+[07:41:25.312] [bmv2] [D] [thread 16899] [0.0] [cxt 0] Egress port is 0
+[07:41:25.312] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Processing packet received on port 1
+[07:41:25.312] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Parser 'parser': start
+[07:41:25.312] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[07:41:25.312] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Extracting header 'ethernet'
+[07:41:25.312] [bmv2] [D] [thread 16900] [0.0] [cxt 0] Pipeline 'egress': start
+[07:41:25.312] [bmv2] [D] [thread 16900] [0.0] [cxt 0] Pipeline 'egress': end
+[07:41:25.312] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Parser state 'start': key is 86dd
+[07:41:25.312] [bmv2] [D] [thread 16900] [0.0] [cxt 0] Deparser 'deparser': start
+[07:41:25.312] [bmv2] [T] [thread 16899] [1.0] [cxt 0] Bytes parsed: 14
+[07:41:25.312] [bmv2] [T] [thread 16900] [0.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[07:41:25.312] [bmv2] [D] [thread 16900] [0.0] [cxt 0] Deparsing header 'ethernet'
+[07:41:25.312] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Parser 'parser' entering state 'parse_ipv6'
+[07:41:25.312] [bmv2] [D] [thread 16900] [0.0] [cxt 0] Deparsing header 'ipv6'
+[07:41:25.312] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Extracting header 'ipv6'
+[07:41:25.312] [bmv2] [D] [thread 16900] [0.0] [cxt 0] Deparser 'deparser': end
+[07:41:25.313] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Parser state 'parse_ipv6': key is 3a
+[07:41:25.313] [bmv2] [T] [thread 16899] [1.0] [cxt 0] Bytes parsed: 54
+[07:41:25.313] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Parser 'parser': end
+[07:41:25.313] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Pipeline 'ingress': start
+[07:41:25.313] [bmv2] [T] [thread 16899] [1.0] [cxt 0] basic.p4(305) Condition "hdr.ipv6.isValid()" (node_2) is true
+[07:41:25.313] [bmv2] [T] [thread 16899] [1.0] [cxt 0] Applying table 'MyIngress.ipv6_tbl'
+[07:41:25.313] [bmv2] [D] [thread 16904] [0.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[07:41:25.313] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[07:41:25.313] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Table 'MyIngress.ipv6_tbl': miss
+[07:41:25.313] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Action entry is NoAction - 
+[07:41:25.313] [bmv2] [T] [thread 16899] [1.0] [cxt 0] Action NoAction
+[07:41:25.313] [bmv2] [T] [thread 16899] [1.0] [cxt 0] basic.p4(309) Condition "hdr.ipv4.isValid()" (node_4) is false
+[07:41:25.313] [bmv2] [T] [thread 16899] [1.0] [cxt 0] basic.p4(312) Condition "hdr.ipv6.isValid() && (meta.is_ingress_border == 1 || meta.is_egress_border == 1)" (node_6) is false
+[07:41:25.313] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Pipeline 'ingress': end
+[07:41:25.313] [bmv2] [D] [thread 16899] [1.0] [cxt 0] Egress port is 0
+[07:41:25.313] [bmv2] [D] [thread 16900] [1.0] [cxt 0] Pipeline 'egress': start
+[07:41:25.313] [bmv2] [D] [thread 16900] [1.0] [cxt 0] Pipeline 'egress': end
+[07:41:25.313] [bmv2] [D] [thread 16900] [1.0] [cxt 0] Deparser 'deparser': start
+[07:41:25.313] [bmv2] [T] [thread 16900] [1.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[07:41:25.313] [bmv2] [D] [thread 16900] [1.0] [cxt 0] Deparsing header 'ethernet'
+[07:41:25.313] [bmv2] [D] [thread 16900] [1.0] [cxt 0] Deparsing header 'ipv6'
+[07:41:25.313] [bmv2] [D] [thread 16900] [1.0] [cxt 0] Deparser 'deparser': end
+[07:41:25.313] [bmv2] [D] [thread 16904] [1.0] [cxt 0] Transmitting packet of size 70 out of port 0
+[07:41:26.541] [bmv2] [T] [thread 17003] bm_get_config
+[07:41:26.543] [bmv2] [T] [thread 17003] bm_set_default_action
+[07:41:26.543] [bmv2] [D] [thread 17003] Set default entry for table 'MyIngress.ipv4_tbl': MyIngress.drop - 
+[07:42:11.580] [bmv2] [T] [thread 17022] bm_get_config
+[07:42:11.582] [bmv2] [T] [thread 17022] bm_mt_get_entries
+[07:42:11.582] [bmv2] [T] [thread 17022] bm_mt_get_entries
+[07:42:11.583] [bmv2] [T] [thread 17022] bm_mt_get_entries
+[07:42:11.593] [bmv2] [T] [thread 17022] bm_reset_state
+[07:42:11.594] [bmv2] [D] [thread 17022] Resetting simple_switch target-specific state
+[07:42:11.594] [bmv2] [D] [thread 17022] resetting PRE state
+[07:42:11.600] [bmv2] [T] [thread 17022] bm_set_default_action
+[07:42:11.600] [bmv2] [D] [thread 17022] Set default entry for table 'MyIngress.ipv4_tbl': MyIngress.drop - 
+[07:42:11.600] [bmv2] [T] [thread 17022] bm_set_default_action
+[07:42:11.600] [bmv2] [D] [thread 17022] Set default entry for table 'MyIngress.ipv6_tbl': MyIngress.drop - 
+[07:42:12.008] [bmv2] [T] [thread 17022] bm_table_add_entry
+[07:42:12.008] [bmv2] [D] [thread 17022] Entry 0 added to table 'MyIngress.ipv4_tbl'
+[07:42:12.008] [bmv2] [D] [thread 17022] Dumping entry 0
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a000101/24
+Action entry: MyIngress.ipv4_forward - bafeedfc7c6e,1,
+
+[07:42:12.010] [bmv2] [T] [thread 17022] bm_table_add_entry
+[07:42:12.010] [bmv2] [D] [thread 17022] Entry 1 added to table 'MyIngress.ipv4_tbl'
+[07:42:12.010] [bmv2] [D] [thread 17022] Dumping entry 1
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a000403/24
+Action entry: MyIngress.ipv4_forward - bafeedfc7c6e,1,
+
+[07:42:12.022] [bmv2] [T] [thread 17022] bm_table_add_entry
+[07:42:12.022] [bmv2] [D] [thread 17022] Entry 0 added to table 'MyIngress.ipv6_tbl'
+[07:42:12.022] [bmv2] [D] [thread 17022] Dumping entry 0
+Match key:
+* hdr.ipv6.dstAddr    : LPM       fe080001000000000000000000000002/64
+Action entry: MyIngress.ipv6_forward - bafeedfc7c6e,1,
+
+[07:42:12.023] [bmv2] [T] [thread 17022] bm_table_add_entry
+[07:42:12.023] [bmv2] [D] [thread 17022] Entry 1 added to table 'MyIngress.ipv6_tbl'
+[07:42:12.023] [bmv2] [D] [thread 17022] Dumping entry 1
+Match key:
+* hdr.ipv6.dstAddr    : LPM       fe080004000000000000000000000004/64
+Action entry: MyIngress.ipv6_forward - bafeedfc7c6e,1,
+
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory

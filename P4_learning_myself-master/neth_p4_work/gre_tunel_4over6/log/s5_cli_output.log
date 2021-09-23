@@ -1,0 +1,49 @@
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Setting default action of ipv4_tbl
+action:              drop
+runtime data:        
+RuntimeCmd: Error: Invalid table name (ipv6_tcl)
+RuntimeCmd: Adding entry to lpm match table ipv4_tbl
+match key:           LPM-0a:00:01:01/32
+action:              ipv4_forward
+runtime data:        00:00:0a:00:01:01	00:02
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table ipv4_tbl
+match key:           LPM-0a:00:05:02/32
+action:              ipv4_forward
+runtime data:        00:00:0a:00:05:02	00:01
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to lpm match table ipv4_tbl
+match key:           LPM-0a:00:02:03/32
+action:              ipv4_forward
+runtime data:        00:00:0a:00:02:03	00:02
+Entry has been added with handle 2
+RuntimeCmd: Adding entry to lpm match table ipv4_tbl
+match key:           LPM-0a:00:03:04/32
+action:              ipv4_forward
+runtime data:        00:00:0a:00:03:04	00:02
+Entry has been added with handle 3
+RuntimeCmd: Invalid match key: Invalid LPM value fe08::43, use '/' to separate prefix and length
+RuntimeCmd: Adding entry to lpm match table ipv6_tbl
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:01/128
+action:              ipv6_forward
+runtime data:        00:00:0a:00:01:01	00:02
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table ipv6_tbl
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:02/128
+action:              ipv6_forward
+runtime data:        00:00:0a:00:05:02	00:01
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to lpm match table ipv6_tbl
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:03/128
+action:              ipv6_forward
+runtime data:        00:00:0a:00:02:03	00:02
+Entry has been added with handle 2
+RuntimeCmd: Adding entry to lpm match table ipv6_tbl
+match key:           LPM-fe:08:00:00:00:00:00:00:00:00:00:00:00:00:00:04/128
+action:              ipv6_forward
+runtime data:        00:00:0a:00:03:04	00:02
+Entry has been added with handle 3
+RuntimeCmd: 

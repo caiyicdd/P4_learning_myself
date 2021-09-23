@@ -1,0 +1,19 @@
+{
+    "hosts": {
+        "h1": {"ip": "fe08::1/128", "mac": "08:00:00:00:01:11"},
+        "h2": {"ip": "fe08::2/128", "mac": "08:00:00:00:02:22"},
+        "h3": {"ip": "fe08::3/128", "mac": "08:00:00:00:03:33"},
+        "h4": {"ip": "fe08::4/128", "mac": "08:00:00:00:04:44"}
+    },
+    "switches": {
+        "s1": { "runtime_json" : "linear-topo/s1-runtime.json" },
+        "s2": { "runtime_json" : "linear-topo/s2-runtime.json" },
+        "s3": { "runtime_json" : "linear-topo/s3-runtime.json" },
+        "s4": { "runtime_json" : "linear-topo/s4-runtime.json" },
+        "s5": { "runtime_json" : "linear-topo/s5-runtime.json" }
+    },
+    "links": [
+        ["h1", "s1-p1"], ["s1-p2", "s2-p1"], ["s2-p2", "s3-p1"], 
+        ["s3-p2", "s4-p2"], ["s4-p1", "s5-p2"], ["h2", "s5-p1"], ["h3", "s2-p3"], ["h4", "s4-p3"]
+    ]
+}
