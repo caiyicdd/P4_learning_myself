@@ -1,0 +1,23 @@
+{
+"ipv4_links":{
+	"s1":{
+		"h1":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null},
+		"s2":{"bw":100,"delay":80,"loss":1,"weight":10,"queue_length":null}
+	},
+	"s2":{
+		"s1":{"bw":100,"delay":80,"loss":1,"weight":10,"queue_length":null},
+		"h2":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null}
+	}
+},
+
+"ipv6_links":{
+	"s1":{
+		"h3":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null},
+		"s2":{"bw":150,"delay":50,"loss":1,"weight":50,"queue_length":null}
+	},
+	"s2":{
+		"s1":{"bw":150,"delay":50,"loss":1,"weight":50,"queue_length":null},
+		"h4":{"bw":null,"delay":null,"loss":null,"weight":1,"queue_length":null}
+	}
+	}
+}

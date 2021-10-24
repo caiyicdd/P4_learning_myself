@@ -1,0 +1,20 @@
+table_set_default ipv4_tbl drop
+table_set_default ipv6_tbl drop
+table_set_default ipv6_lpm drop
+table set default ipv4_lpm drop
+table set default src6_tbl drop
+
+table_add ipv6_lpm ipv6_forward fe80::1/128 => 00:00:0a:00:01:01 1
+
+table_add ipv6_tbl set_is_src_v6 fe80:12::2/128 => 0x86dd 100
+table_add ipv4_tbl set_is_src_v4 20.0.25.2/32 => 0x0800 200
+
+
+table_add src6_tbl nextHop_forward_6to4 2 5 200 => 20.0.25.2 20.0.25.5
+table_add src4_tbl endHop_forward_v6 2 0 100 => 0x86dd
+
+table_add ipv4_lpm ipv4_forward 20.0.25.5/32 => 00:00:0a:00:03:00 2
+table_add ipv4_lpm ipv4_forward 20.0.24.4/32 => 00:00:0a:00:03:00 3
+
+table_add ipv6_tbl add_ipv6_gre_header fe80::2/128 => 20.0.24.2 20.0.24.4
+table_add ipv4_tbl mov_ipv4_gre_header 20.0.24.2 =>

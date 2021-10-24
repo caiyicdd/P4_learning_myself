@@ -1,0 +1,73 @@
+Warning: you requested the nanomsg event logger, but bmv2 was compiled without -DBMELOG, and the event logger cannot be activated
+Calling target program-options parser
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'MyIngress.ipv6_tbl': NoAction - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic595': basic595 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_get_nextSrc': MyIngress.get_nextSrc - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic600': basic600 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic602': basic602 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic604': basic604 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic607': basic607 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'MyIngress.src6_tbl': NoAction - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic615': basic615 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic617': basic617 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'MyIngress.ipv4_tbl': NoAction - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic626': basic626 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_get_nextSrc_0': MyIngress.get_nextSrc - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic631': basic631 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic633': basic633 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic635': basic635 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic638': basic638 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'MyIngress.src4_tbl': NoAction - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic645': basic645 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic647': basic647 - 
+[14:13:13.588] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic654': basic654 - 
+[14:13:13.589] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic657': basic657 - 
+[14:13:13.589] [bmv2] [D] [thread 5325] Set default default entry for table 'tbl_basic660': basic660 - 
+[14:13:13.589] [bmv2] [D] [thread 5325] Set default default entry for table 'MyIngress.ipv4_lpm': NoAction - 
+[14:13:13.589] [bmv2] [D] [thread 5325] Set default default entry for table 'MyIngress.ipv6_lpm': MyIngress.drop - 
+Adding interface s8-eth1 as port 1
+[14:13:13.611] [bmv2] [D] [thread 5325] Adding interface s8-eth1 as port 1
+Adding interface s8-eth2 as port 2
+[14:13:13.626] [bmv2] [D] [thread 5325] Adding interface s8-eth2 as port 2
+Adding interface s8-eth3 as port 3
+[14:13:13.653] [bmv2] [D] [thread 5325] Adding interface s8-eth3 as port 3
+[14:13:13.667] [bmv2] [I] [thread 5325] Starting Thrift server on port 9097
+[14:13:13.668] [bmv2] [I] [thread 5325] Thrift server was started
+[14:13:16.947] [bmv2] [T] [thread 5438] bm_get_config
+[14:13:16.955] [bmv2] [T] [thread 5438] bm_set_default_action
+[14:13:16.955] [bmv2] [D] [thread 5438] Set default entry for table 'MyIngress.ipv4_tbl': MyIngress.drop - 
+[14:13:16.956] [bmv2] [T] [thread 5438] bm_table_add_entry
+[14:13:16.956] [bmv2] [D] [thread 5438] Entry 0 added to table 'MyIngress.ipv6_lpm'
+[14:13:16.956] [bmv2] [D] [thread 5438] Dumping entry 0
+Match key:
+* hdr.ipv6.dstAddr    : LPM       fe800000000000000000000000000001/128
+Action entry: MyIngress.ipv6_forward - a000700,1,
+
+[14:13:16.957] [bmv2] [T] [thread 5438] bm_table_add_entry
+[14:13:16.957] [bmv2] [D] [thread 5438] Entry 1 added to table 'MyIngress.ipv6_lpm'
+[14:13:16.957] [bmv2] [D] [thread 5438] Dumping entry 1
+Match key:
+* hdr.ipv6.dstAddr    : LPM       fe800000000000000000000000000003/128
+Action entry: MyIngress.ipv6_forward - a080302,2,
+
+[14:13:16.957] [bmv2] [T] [thread 5438] bm_table_add_entry
+[14:13:16.957] [bmv2] [D] [thread 5438] Entry 2 added to table 'MyIngress.ipv6_lpm'
+[14:13:16.957] [bmv2] [D] [thread 5438] Dumping entry 2
+Match key:
+* hdr.ipv6.dstAddr    : LPM       fe800000000000000000000000000007/128
+Action entry: MyIngress.ipv6_forward - a080402,1,
+
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory

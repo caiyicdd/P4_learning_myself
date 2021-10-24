@@ -234,10 +234,10 @@ class RoutingController(object):
                                if dst_type != "0x0800":
                                     print("diferent path should be selected:")
                                     if self.all_distance.has_key("ipv6"):
-                                        print("the former paht : (wight = {})".format(self.all_distance["ipv6"][sw_name][sw_dst]))
-                                        print(self.all_shortest_paths["ipv6"][sw_name][sw_dst])
-                                    print("the new path : (wight = {})".format(self.all_distance["ipv4"][sw_name][sw_dst]))
-                                    print(self.all_shortest_paths["ipv4"][sw_name][sw_dst])
+                                        print("the former paht : (wight = {})".format(self.all_distance["ipv4"][sw_name][sw_dst]))
+                                        print(self.all_shortest_paths["ipv4"][sw_name][sw_dst])
+                                    print("the new path : (wight = {})".format(self.all_distance["ipv6"][sw_name][sw_dst]))
+                                    print(self.all_shortest_paths["ipv6"][sw_name][sw_dst])
 
                                     print "table_add at {} (add_gre_header):".format(sw_name)
                                     self.controllers[sw_name].table_add("ipv4_tbl","add_ipv4_gre_header",[str(host_ip)],[str(src_gre_ip),str(dst_gre_ip)])
@@ -291,10 +291,9 @@ class RoutingController(object):
                         host_mac = self.topo.get_host_mac(host)
 
                         #add rule
-                        print "table_add at {}:(fforward)".format(sw_name)
+                        print "table_add at {}:(v6 fforward)".format(sw_name)
                         self.controllers[sw_name].table_add("ipv6_tbl", "ipv6_forward", [str(host_ip)], [str(host_mac), str(sw_port)])
-                        if sw_name in self.tunnels["4over6"]:
-                            self.controllers[sw_name].table_add("ipv6_lpm", "ipv6_forward", [str(host_ip)], [str(host_mac), str(sw_port)])
+                        
 
                 #check if there are directly connected hosts
                 else:
@@ -320,7 +319,7 @@ class RoutingController(object):
                                     print("the new path : (wight = {})".format(self.all_distance["ipv4"][sw_name][sw_dst]))
                                     print(self.all_shortest_paths["ipv4"][sw_name][sw_dst])
 
-                                    print "table_add at {} (add_gre_header):".format(sw_name)
+                                    print "table_add at {} (v6 add_gre_header):".format(sw_name)
                                     self.controllers[sw_name].table_add("ipv6_tbl","add_ipv6_gre_header",[str(host_ip)],[str(src_gre_ip),str(dst_gre_ip)])
 
                                 else :
@@ -328,28 +327,39 @@ class RoutingController(object):
                                     sw_port = self.topo.node_to_node_port_num(sw_name, next_hop)
                                     dst_sw_mac = self.topo.node_to_node_mac(next_hop, sw_name)
                                     #add rule
-                                    print "table_add at {} (forward):".format(sw_name)
+                                    print "table_add at {} (v6 forward 1):".format(sw_name)
                                     self.controllers[sw_name].table_add("ipv6_tbl", "ipv6_forward", [str(host_ip)],
                                                                         [str(dst_sw_mac), str(sw_port)])
                                 
+                                
+                                    for i in range(len(self.virtualHost[sw_dst])):
+                                        if self.virtualHost[sw_dst][i][0] == "0x08dd":
+                                            host_ip = self.virtualHost[sw_dst][i][1] + "/128"
+                                            print "table_add at {} (v6 forward 3):".format(sw_name)
+                                            self.controllers[sw_name].table_add("ipv6_lpm", "ipv6_forward", [str(host_ip)],
+                                                                            [str(dst_sw_mac), str(sw_port)])
                                 print("##############################################")
                             else:
                                 next_hop = paths[1]
                                 sw_port = self.topo.node_to_node_port_num(sw_name, next_hop)
                                 dst_sw_mac = self.topo.node_to_node_mac(next_hop, sw_name)
                                 #add rule
-                                print "table_add at {} (forward):".format(sw_name)
+                                print "table_add at {} (v6 forward 2):".format(sw_name)
                                 self.controllers[sw_name].table_add("ipv6_tbl", "ipv6_forward", [str(host_ip)],
                                                                         [str(dst_sw_mac), str(sw_port)])
 
-                            if sw_dst in self.tunnels["4over6"]:
-                                next_hop = paths[1]
-                                sw_port = self.topo.node_to_node_port_num(sw_name, next_hop)
-                                dst_sw_mac = self.topo.node_to_node_mac(next_hop, sw_name)
-                                for i in range(len(self.virtualHost[sw_dst])):
-                                    if self.virtualHost[sw_dst][i][0] == "0x08dd":
-                                        host_ip = self.virtualHost[sw_dst][i][1] + "/128"
-                                        self.controllers[sw_name].table_add("ipv6_tbl", "ipv6_forward", [str(host_ip)],
+
+
+                    if sw_dst in self.tunnels["4over6"]:
+                        paths =  self.all_shortest_paths["ipv6"][sw_name][sw_dst]
+                        next_hop = paths[1]
+                        sw_port = self.topo.node_to_node_port_num(sw_name, next_hop)
+                        dst_sw_mac = self.topo.node_to_node_mac(next_hop, sw_name)
+                        for i in range(len(self.virtualHost[sw_dst])):
+                            if self.virtualHost[sw_dst][i][0] == "0x08dd":
+                                host_ip = self.virtualHost[sw_dst][i][1] + "/128"
+                                print "table_add at {} (v6 forward 3):".format(sw_name)
+                                self.controllers[sw_name].table_add("ipv6_tbl", "ipv6_forward", [str(host_ip)],
                                                                         [str(dst_sw_mac), str(sw_port)])
 
                             
@@ -357,6 +367,8 @@ class RoutingController(object):
 
     def tunnel(self, sw1, sw2, src_type, dstip):
         print("config and keep tunnel alive...")
+        dst_ip = self.tunnels["4over6"][sw2]
+        src_ip = self.tunnels["4over6"][sw1]
         if src_type == "0x0800":
             graph = self.graph_ipv4
             dst_type = "0x08dd"
@@ -368,8 +380,7 @@ class RoutingController(object):
                 return res_type, src_gre_ip, dst_gre_ip
             path =  self.all_shortest_paths["ipv6"][sw1][sw2]
             next_hop = path[1]
-            dst_ip = self.tunnels["4over6"][sw2]
-            src_ip = self.tunnels["4over6"][sw1]
+            
             sw_port = self.topo.node_to_node_port_num(sw1, next_hop)
             dst_sw_mac = self.topo.node_to_node_mac(next_hop, sw1)
             bw,delay,loss,wight,queue_length = self.get_allWeights(dst_type, sw1, sw2)
@@ -395,9 +406,6 @@ class RoutingController(object):
                 print(new_item)
                 print("add a new tunnel interfaces({}).".format(dst_type))
 
-                self.controllers[sw1].table_add("ipv6_tbl","mov_ipv6_gre_header",[str(src_ip+"/64")])
-                self.controllers[sw2].table_add("ipv6_tbl","mov_ipv6_gre_header",[str(dst_ip+"/64")])
-
                 self.virtualHost[sw1].append((dst_type,src_ip))
                 self.virtualHost[sw1]=list(set(self.virtualHost[sw1]))
 
@@ -411,9 +419,13 @@ class RoutingController(object):
 
                 self.virtualHost[sw1].append((dst_type,src_ip))
                 self.virtualHost[sw1]=list(set(self.virtualHost[sw1]))
-                self.controllers[sw1].table_add("ipv6_tbl","mov_ipv6_gre_header",[str(src_ip+"/64")])
-                self.controllers[sw2].table_add("ipv6_tbl","mov_ipv6_gre_header",[str(dst_ip+"/64")])
 
+        self.controllers[sw1].table_add("ipv6_tbl","mov_ipv6_gre_header",[str(src_ip+"/64")])
+        self.controllers[sw2].table_add("ipv6_tbl","mov_ipv6_gre_header",[str(dst_ip+"/64")])
+
+
+        dst_ip = self.tunnels["6over4"][sw2]
+        src_ip = self.tunnels["6over4"][sw1]
         if src_type == "0x08dd" :
             dst_type = "0x0800"
             if not self.all_shortest_paths.has_key("ipv4"):
@@ -423,8 +435,7 @@ class RoutingController(object):
                 return res_type, src_gre_ip, dst_gre_ip
             path =  self.all_shortest_paths["ipv4"][sw1][sw2]
             next_hop = path[1]
-            dst_ip = self.tunnels["6over4"][sw2]
-            src_ip = self.tunnels["6over4"][sw1]
+            
             sw_port = self.topo.node_to_node_port_num(sw1, next_hop)
             dst_sw_mac = self.topo.node_to_node_mac(next_hop, sw1)
             bw,delay,loss,wight,queue_length = self.get_allWeights(dst_type, sw1, sw2)
@@ -451,9 +462,6 @@ class RoutingController(object):
                 self.virtualHost[sw1].append((dst_type,src_ip))
                 self.virtualHost[sw1]=list(set(self.virtualHost[sw1]))
 
-                self.controllers[sw1].table_add("ipv4_tbl","mov_ipv4_gre_header",[str(src_ip+"/24")])
-                self.controllers[sw2].table_add("ipv4_tbl","mov_ipv4_gre_header",[str(dst_ip+"/24")])
-
             else:
                 print("update exist item: ",index)
                 print("before update:")
@@ -464,8 +472,9 @@ class RoutingController(object):
 
                 self.virtualHost[sw1].append((dst_type,src_ip))
                 self.virtualHost[sw1]=list(set(self.virtualHost[sw1]))
-                self.controllers[sw1].table_add("ipv4_tbl","mov_ipv4_gre_header",[str(src_ip+"/24")])
-                self.controllers[sw2].table_add("ipv4_tbl","mov_ipv4_gre_header",[str(dst_ip+"/24")])
+
+        self.controllers[sw1].table_add("ipv4_tbl","mov_ipv4_gre_header",[str(src_ip+"/24")])
+        self.controllers[sw2].table_add("ipv4_tbl","mov_ipv4_gre_header",[str(dst_ip+"/24")])
 
         bw1,delay1,loss1,wight1,queue_length1 = self.get_allWeights(src_type, sw1, sw2)
         res_wight = wight1
@@ -487,7 +496,7 @@ class RoutingController(object):
             else:
                 index = i   
                      
-            bw2,delay2,loss2,wight2,queue_length2 = self.get_allWeights(self.fullRouting_tbl[sw1][i][0], sw1, sw2)
+            bw2,delay2,loss2,wight2,queue_length2 = self.get_allWeights(self.fullRouting_tbl[sw1][i][0][0], sw1, sw2)
             print("compare with : ",self.fullRouting_tbl[sw1][i][0])
             if wight2 != None and res_wight > wight2:
                 res_type = self.fullRouting_tbl[sw1][i][0][0]
@@ -605,7 +614,7 @@ class RoutingController(object):
             print("compute routing table {}-th".format(ic))
             ic = ic + 1
             time.sleep(20)
-            if ic == 300:
+            if ic == 30:
                 break
         
         
