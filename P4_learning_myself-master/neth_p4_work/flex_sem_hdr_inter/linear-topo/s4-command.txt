@@ -1,0 +1,10 @@
+table_set_default ipv4_tbl drop
+
+#table_add ipv4_tbl ipv4_forward 10.0.1.1/32 => 00:00:0a:00:03:00 3
+#table_add ipv4_tbl ipv4_forward 10.0.4.2/32 => 00:00:0a:00:04:02 1
+
+table_add ipv4_lpm ipv4_forward 20.0.24.2/32 => 00:00:0a:00:03:00 1
+table_add ipv6_lpm ipv6_forward fe80::2/128 => 00:00:0a:00:01:01 3
+
+table_add ipv6_tbl add_ipv6_gre_header fe80::1/128 => 20.0.24.4 20.0.24.2
+table_add ipv4_tbl mov_ipv4_gre_header 20.0.24.4/32 =>

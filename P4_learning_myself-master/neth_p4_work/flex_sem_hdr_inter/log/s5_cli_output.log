@@ -1,0 +1,54 @@
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Setting default action of ipv4_tbl
+action:              drop
+runtime data:        
+RuntimeCmd: Setting default action of ipv6_tbl
+action:              drop
+runtime data:        
+RuntimeCmd: Setting default action of ipv6_lpm
+action:              drop
+runtime data:        
+RuntimeCmd: *** Unknown syntax: table set default ipv4_lpm drop
+RuntimeCmd: Adding entry to lpm match table ipv4_lpm
+match key:           LPM-14:00:19:02/32
+action:              ipv4_forward
+runtime data:        00:00:0a:00:03:00	00:01
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table ipv4_tbl
+match key:           LPM-14:00:19:05/32
+action:              set_is_src_v4
+runtime data:        08:00	00:00:00:c8
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table ipv6_tbl
+match key:           LPM-fe:80:00:57:00:00:00:00:00:00:00:00:00:00:00:05/128
+action:              set_is_src_v6
+runtime data:        86:dd	00:00:01:2c
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table src4_tbl
+match key:           EXACT-00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:05	EXACT-00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:07	EXACT-00:00:01:2c
+action:              nextHop_forward_4to6
+runtime data:        fe:80:00:57:00:00:00:00:00:00:00:00:00:00:00:05	fe:80:00:57:00:00:00:00:00:00:00:00:00:00:00:07
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table src6_tbl
+match key:           EXACT-00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:05	EXACT-00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:02	EXACT-00:00:00:c8
+action:              nextHop_forward_6to4
+runtime data:        14:00:19:05	14:00:19:02
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to lpm match table ipv6_lpm
+match key:           LPM-fe:80:00:57:00:00:00:00:00:00:00:00:00:00:00:07/128
+action:              ipv6_forward
+runtime data:        00:00:0a:00:06:00	00:03
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table interDomain_v4_lpm
+match key:           EXACT-00:00:01:f4
+action:              interDomain_v4tov6_forward
+runtime data:        86:dd	fe:80:00:57:00:00:00:00:00:00:00:00:00:00:00:05	fe:80:00:57:00:00:00:00:00:00:00:00:00:00:00:07
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table interDomain_v6_lpm
+match key:           EXACT-00:00:00:64
+action:              interDomain_v6tov4_forward
+runtime data:        08:00	14:00:19:05	14:00:19:02
+Entry has been added with handle 0
+RuntimeCmd: 

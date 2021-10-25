@@ -1,0 +1,13 @@
+table_set_default ipv6_tbl drop
+table_set_default ipv6_lpm drop
+
+
+#table_add ipv4_tbl ipv4_forward 10.0.1.1/32 => 00:00:0a:00:01:01 1
+#table_add ipv4_tbl ipv4_forward 10.0.4.2/32 => 00:00:0a:00:02:00 2
+
+table_add ipv6_lpm ipv6_forward fe80::1/128 => 00:00:0a:00:01:01 1
+table_add ipv6_lpm ipv6_forward fe80::2/128 => 00:00:0a:00:02:00 2
+table_add ipv6_lpm ipv6_forward fe80::4/128 => 00:00:0a:00:02:00 2
+table_add ipv6_tbl add_srcheader_v6_3 fe80::3/128 => fe80:12::2 00:00:0a:00:02:00 2 2 200 0x0800 5 300 0x86dd 7 500 0x86dd
+
+table_add ipv6_lpm ipv6_forward fe80:12::2/128 => 00:00:0a:00:02:00 2

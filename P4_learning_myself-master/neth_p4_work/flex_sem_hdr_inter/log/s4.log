@@ -1,0 +1,332 @@
+Warning: you requested the nanomsg event logger, but bmv2 was compiled without -DBMELOG, and the event logger cannot be activated
+Calling target program-options parser
+[15:02:42.772] [bmv2] [D] [thread 21204] Set default default entry for table 'MyIngress.ipv6_tbl': NoAction - 
+[15:02:42.772] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic749': basic749 - 
+[15:02:42.772] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_get_nextSrc': MyIngress.get_nextSrc - 
+[15:02:42.772] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic754': basic754 - 
+[15:02:42.772] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic756': basic756 - 
+[15:02:42.772] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic758': basic758 - 
+[15:02:42.772] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic761': basic761 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'MyIngress.src6_tbl': NoAction - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic769': basic769 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic771': basic771 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'MyIngress.interDomain_v6_lpm': NoAction - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic777': basic777 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'MyIngress.ipv4_tbl': NoAction - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic785': basic785 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_get_nextSrc_0': MyIngress.get_nextSrc - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic790': basic790 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic792': basic792 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic794': basic794 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic797': basic797 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'MyIngress.src4_tbl': NoAction - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic804': basic804 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic806': basic806 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'MyIngress.interDomain_v4_lpm': NoAction - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic811': basic811 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic817': basic817 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic820': basic820 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'tbl_basic823': basic823 - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'MyIngress.ipv4_lpm': NoAction - 
+[15:02:42.773] [bmv2] [D] [thread 21204] Set default default entry for table 'MyIngress.ipv6_lpm': MyIngress.drop - 
+Adding interface s4-eth1 as port 1
+[15:02:42.799] [bmv2] [D] [thread 21204] Adding interface s4-eth1 as port 1
+Adding interface s4-eth2 as port 2
+[15:02:42.856] [bmv2] [D] [thread 21204] Adding interface s4-eth2 as port 2
+Adding interface s4-eth3 as port 3
+[15:02:42.891] [bmv2] [D] [thread 21204] Adding interface s4-eth3 as port 3
+[15:02:42.931] [bmv2] [I] [thread 21204] Starting Thrift server on port 9093
+[15:02:42.931] [bmv2] [I] [thread 21204] Thrift server was started
+[15:02:44.791] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Processing packet received on port 1
+[15:02:44.791] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Parser 'parser': start
+[15:02:44.791] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:02:44.791] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Extracting header 'ethernet'
+[15:02:44.791] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Parser state 'start': key is 86dd
+[15:02:44.791] [bmv2] [T] [thread 21210] [0.0] [cxt 0] Bytes parsed: 14
+[15:02:44.791] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Parser 'parser' entering state 'parse_ipv6'
+[15:02:44.791] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Extracting header 'ipv6'
+[15:02:44.791] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Parser state 'parse_ipv6': key is 3a
+[15:02:44.791] [bmv2] [T] [thread 21210] [0.0] [cxt 0] Bytes parsed: 54
+[15:02:44.791] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Parser 'parser': end
+[15:02:44.791] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Pipeline 'ingress': start
+[15:02:44.791] [bmv2] [T] [thread 21210] [0.0] [cxt 0] basic.p4(745) Condition "hdr.ipv6.isValid()" (node_2) is true
+[15:02:44.791] [bmv2] [T] [thread 21210] [0.0] [cxt 0] Applying table 'MyIngress.ipv6_tbl'
+[15:02:44.792] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:44.792] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Table 'MyIngress.ipv6_tbl': miss
+[15:02:44.792] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Action entry is NoAction - 
+[15:02:44.792] [bmv2] [T] [thread 21210] [0.0] [cxt 0] Action NoAction
+[15:02:44.792] [bmv2] [T] [thread 21210] [0.0] [cxt 0] basic.p4(747) Condition "meta.is_src == 1 && hdr.src.isValid()" (node_4) is false
+[15:02:44.792] [bmv2] [T] [thread 21210] [0.0] [cxt 0] basic.p4(775) Condition "meta.is_ingress_border == 1" (node_19) is false
+[15:02:44.792] [bmv2] [T] [thread 21210] [0.0] [cxt 0] basic.p4(781) Condition "hdr.ipv4.isValid() && meta.is_src == 0 && meta.is_ingress_border == 0" (node_22) is false
+[15:02:44.792] [bmv2] [T] [thread 21210] [0.0] [cxt 0] basic.p4(815) Condition "meta.is_last_hop == 1" (node_42) is false
+[15:02:44.792] [bmv2] [T] [thread 21210] [0.0] [cxt 0] basic.p4(829) Condition "hdr.ethernet.etherType == TYPE_IPV4" (node_49) is false
+[15:02:44.792] [bmv2] [T] [thread 21210] [0.0] [cxt 0] basic.p4(832) Condition "hdr.ethernet.etherType == TYPE_IPV6" (node_51) is true
+[15:02:44.792] [bmv2] [T] [thread 21210] [0.0] [cxt 0] Applying table 'MyIngress.ipv6_lpm'
+[15:02:44.792] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:44.792] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Table 'MyIngress.ipv6_lpm': miss
+[15:02:44.792] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Action entry is MyIngress.drop - 
+[15:02:44.792] [bmv2] [T] [thread 21210] [0.0] [cxt 0] Action MyIngress.drop
+[15:02:44.792] [bmv2] [T] [thread 21210] [0.0] [cxt 0] basic.p4(254) Primitive mark_to_drop(standard_metadata)
+[15:02:44.792] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Pipeline 'ingress': end
+[15:02:44.792] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Egress port is 511
+[15:02:44.792] [bmv2] [D] [thread 21210] [0.0] [cxt 0] Dropping packet at the end of ingress
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Processing packet received on port 1
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Parser 'parser': start
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Extracting header 'ethernet'
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Parser state 'start': key is 86dd
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] Bytes parsed: 14
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Parser 'parser' entering state 'parse_ipv6'
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Extracting header 'ipv6'
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Parser state 'parse_ipv6': key is 3a
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] Bytes parsed: 54
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Parser 'parser': end
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Pipeline 'ingress': start
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] basic.p4(745) Condition "hdr.ipv6.isValid()" (node_2) is true
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] Applying table 'MyIngress.ipv6_tbl'
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Table 'MyIngress.ipv6_tbl': miss
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Action entry is NoAction - 
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] Action NoAction
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] basic.p4(747) Condition "meta.is_src == 1 && hdr.src.isValid()" (node_4) is false
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] basic.p4(775) Condition "meta.is_ingress_border == 1" (node_19) is false
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] basic.p4(781) Condition "hdr.ipv4.isValid() && meta.is_src == 0 && meta.is_ingress_border == 0" (node_22) is false
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] basic.p4(815) Condition "meta.is_last_hop == 1" (node_42) is false
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] basic.p4(829) Condition "hdr.ethernet.etherType == TYPE_IPV4" (node_49) is false
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] basic.p4(832) Condition "hdr.ethernet.etherType == TYPE_IPV6" (node_51) is true
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] Applying table 'MyIngress.ipv6_lpm'
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Table 'MyIngress.ipv6_lpm': miss
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Action entry is MyIngress.drop - 
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] Action MyIngress.drop
+[15:02:44.920] [bmv2] [T] [thread 21210] [1.0] [cxt 0] basic.p4(254) Primitive mark_to_drop(standard_metadata)
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Pipeline 'ingress': end
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Egress port is 511
+[15:02:44.920] [bmv2] [D] [thread 21210] [1.0] [cxt 0] Dropping packet at the end of ingress
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Processing packet received on port 3
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Parser 'parser': start
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Extracting header 'ethernet'
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Parser state 'start': key is 86dd
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] Bytes parsed: 14
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Parser 'parser' entering state 'parse_ipv6'
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Extracting header 'ipv6'
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Parser state 'parse_ipv6': key is 3a
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] Bytes parsed: 54
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Parser 'parser': end
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Pipeline 'ingress': start
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] basic.p4(745) Condition "hdr.ipv6.isValid()" (node_2) is true
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] Applying table 'MyIngress.ipv6_tbl'
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Table 'MyIngress.ipv6_tbl': miss
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Action entry is NoAction - 
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] Action NoAction
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] basic.p4(747) Condition "meta.is_src == 1 && hdr.src.isValid()" (node_4) is false
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] basic.p4(775) Condition "meta.is_ingress_border == 1" (node_19) is false
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] basic.p4(781) Condition "hdr.ipv4.isValid() && meta.is_src == 0 && meta.is_ingress_border == 0" (node_22) is false
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] basic.p4(815) Condition "meta.is_last_hop == 1" (node_42) is false
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] basic.p4(829) Condition "hdr.ethernet.etherType == TYPE_IPV4" (node_49) is false
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] basic.p4(832) Condition "hdr.ethernet.etherType == TYPE_IPV6" (node_51) is true
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] Applying table 'MyIngress.ipv6_lpm'
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Table 'MyIngress.ipv6_lpm': miss
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Action entry is MyIngress.drop - 
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] Action MyIngress.drop
+[15:02:45.140] [bmv2] [T] [thread 21210] [2.0] [cxt 0] basic.p4(254) Primitive mark_to_drop(standard_metadata)
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Pipeline 'ingress': end
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Egress port is 511
+[15:02:45.140] [bmv2] [D] [thread 21210] [2.0] [cxt 0] Dropping packet at the end of ingress
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Processing packet received on port 2
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Parser 'parser': start
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Extracting header 'ethernet'
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Parser state 'start': key is 86dd
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] Bytes parsed: 14
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Parser 'parser' entering state 'parse_ipv6'
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Extracting header 'ipv6'
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Parser state 'parse_ipv6': key is 3a
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] Bytes parsed: 54
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Parser 'parser': end
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Pipeline 'ingress': start
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] basic.p4(745) Condition "hdr.ipv6.isValid()" (node_2) is true
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] Applying table 'MyIngress.ipv6_tbl'
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Table 'MyIngress.ipv6_tbl': miss
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Action entry is NoAction - 
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] Action NoAction
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] basic.p4(747) Condition "meta.is_src == 1 && hdr.src.isValid()" (node_4) is false
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] basic.p4(775) Condition "meta.is_ingress_border == 1" (node_19) is false
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] basic.p4(781) Condition "hdr.ipv4.isValid() && meta.is_src == 0 && meta.is_ingress_border == 0" (node_22) is false
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] basic.p4(815) Condition "meta.is_last_hop == 1" (node_42) is false
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] basic.p4(829) Condition "hdr.ethernet.etherType == TYPE_IPV4" (node_49) is false
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] basic.p4(832) Condition "hdr.ethernet.etherType == TYPE_IPV6" (node_51) is true
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] Applying table 'MyIngress.ipv6_lpm'
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Table 'MyIngress.ipv6_lpm': miss
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Action entry is MyIngress.drop - 
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] Action MyIngress.drop
+[15:02:45.486] [bmv2] [T] [thread 21210] [3.0] [cxt 0] basic.p4(254) Primitive mark_to_drop(standard_metadata)
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Pipeline 'ingress': end
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Egress port is 511
+[15:02:45.486] [bmv2] [D] [thread 21210] [3.0] [cxt 0] Dropping packet at the end of ingress
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Processing packet received on port 2
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Parser 'parser': start
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Extracting header 'ethernet'
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Parser state 'start': key is 86dd
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] Bytes parsed: 14
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Parser 'parser' entering state 'parse_ipv6'
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Extracting header 'ipv6'
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Parser state 'parse_ipv6': key is 3a
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] Bytes parsed: 54
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Parser 'parser': end
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Pipeline 'ingress': start
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] basic.p4(745) Condition "hdr.ipv6.isValid()" (node_2) is true
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] Applying table 'MyIngress.ipv6_tbl'
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Table 'MyIngress.ipv6_tbl': miss
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Action entry is NoAction - 
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] Action NoAction
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] basic.p4(747) Condition "meta.is_src == 1 && hdr.src.isValid()" (node_4) is false
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] basic.p4(775) Condition "meta.is_ingress_border == 1" (node_19) is false
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] basic.p4(781) Condition "hdr.ipv4.isValid() && meta.is_src == 0 && meta.is_ingress_border == 0" (node_22) is false
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] basic.p4(815) Condition "meta.is_last_hop == 1" (node_42) is false
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] basic.p4(829) Condition "hdr.ethernet.etherType == TYPE_IPV4" (node_49) is false
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] basic.p4(832) Condition "hdr.ethernet.etherType == TYPE_IPV6" (node_51) is true
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] Applying table 'MyIngress.ipv6_lpm'
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Table 'MyIngress.ipv6_lpm': miss
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Action entry is MyIngress.drop - 
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] Action MyIngress.drop
+[15:02:45.495] [bmv2] [T] [thread 21210] [4.0] [cxt 0] basic.p4(254) Primitive mark_to_drop(standard_metadata)
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Pipeline 'ingress': end
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Egress port is 511
+[15:02:45.495] [bmv2] [D] [thread 21210] [4.0] [cxt 0] Dropping packet at the end of ingress
+[15:02:45.502] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Processing packet received on port 3
+[15:02:45.502] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Parser 'parser': start
+[15:02:45.502] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:02:45.502] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Extracting header 'ethernet'
+[15:02:45.502] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Parser state 'start': key is 86dd
+[15:02:45.502] [bmv2] [T] [thread 21210] [5.0] [cxt 0] Bytes parsed: 14
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Parser 'parser' entering state 'parse_ipv6'
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Extracting header 'ipv6'
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Parser state 'parse_ipv6': key is 3a
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] Bytes parsed: 54
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Parser 'parser': end
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Pipeline 'ingress': start
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] basic.p4(745) Condition "hdr.ipv6.isValid()" (node_2) is true
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] Applying table 'MyIngress.ipv6_tbl'
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Table 'MyIngress.ipv6_tbl': miss
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Action entry is NoAction - 
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] Action NoAction
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] basic.p4(747) Condition "meta.is_src == 1 && hdr.src.isValid()" (node_4) is false
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] basic.p4(775) Condition "meta.is_ingress_border == 1" (node_19) is false
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] basic.p4(781) Condition "hdr.ipv4.isValid() && meta.is_src == 0 && meta.is_ingress_border == 0" (node_22) is false
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] basic.p4(815) Condition "meta.is_last_hop == 1" (node_42) is false
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] basic.p4(829) Condition "hdr.ethernet.etherType == TYPE_IPV4" (node_49) is false
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] basic.p4(832) Condition "hdr.ethernet.etherType == TYPE_IPV6" (node_51) is true
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] Applying table 'MyIngress.ipv6_lpm'
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Table 'MyIngress.ipv6_lpm': miss
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Action entry is MyIngress.drop - 
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] Action MyIngress.drop
+[15:02:45.503] [bmv2] [T] [thread 21210] [5.0] [cxt 0] basic.p4(254) Primitive mark_to_drop(standard_metadata)
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Pipeline 'ingress': end
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Egress port is 511
+[15:02:45.503] [bmv2] [D] [thread 21210] [5.0] [cxt 0] Dropping packet at the end of ingress
+[15:02:48.802] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Processing packet received on port 1
+[15:02:48.802] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Parser 'parser': start
+[15:02:48.802] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Parser 'parser' entering state 'start'
+[15:02:48.802] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Extracting header 'ethernet'
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Parser state 'start': key is 86dd
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] Bytes parsed: 14
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Parser 'parser' entering state 'parse_ipv6'
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Extracting header 'ipv6'
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Parser state 'parse_ipv6': key is 3a
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] Bytes parsed: 54
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Parser 'parser': end
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Pipeline 'ingress': start
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] basic.p4(745) Condition "hdr.ipv6.isValid()" (node_2) is true
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] Applying table 'MyIngress.ipv6_tbl'
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Table 'MyIngress.ipv6_tbl': miss
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Action entry is NoAction - 
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] Action NoAction
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] basic.p4(747) Condition "meta.is_src == 1 && hdr.src.isValid()" (node_4) is false
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] basic.p4(775) Condition "meta.is_ingress_border == 1" (node_19) is false
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] basic.p4(781) Condition "hdr.ipv4.isValid() && meta.is_src == 0 && meta.is_ingress_border == 0" (node_22) is false
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] basic.p4(815) Condition "meta.is_last_hop == 1" (node_42) is false
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] basic.p4(829) Condition "hdr.ethernet.etherType == TYPE_IPV4" (node_49) is false
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] basic.p4(832) Condition "hdr.ethernet.etherType == TYPE_IPV6" (node_51) is true
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] Applying table 'MyIngress.ipv6_lpm'
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Looking up key:
+* hdr.ipv6.dstAddr    : ff020000000000000000000000000002
+
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Table 'MyIngress.ipv6_lpm': miss
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Action entry is MyIngress.drop - 
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] Action MyIngress.drop
+[15:02:48.803] [bmv2] [T] [thread 21210] [6.0] [cxt 0] basic.p4(254) Primitive mark_to_drop(standard_metadata)
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Pipeline 'ingress': end
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Egress port is 511
+[15:02:48.803] [bmv2] [D] [thread 21210] [6.0] [cxt 0] Dropping packet at the end of ingress
+[15:02:51.146] [bmv2] [T] [thread 21394] bm_get_config
+[15:02:51.158] [bmv2] [T] [thread 21394] bm_set_default_action
+[15:02:51.158] [bmv2] [D] [thread 21394] Set default entry for table 'MyIngress.ipv4_tbl': MyIngress.drop - 
+[15:02:51.158] [bmv2] [T] [thread 21394] bm_table_add_entry
+[15:02:51.158] [bmv2] [D] [thread 21394] Entry 0 added to table 'MyIngress.ipv4_lpm'
+[15:02:51.158] [bmv2] [D] [thread 21394] Dumping entry 0
+Match key:
+* hdr.ipv4.dstAddr    : LPM       14001802/32
+Action entry: MyIngress.ipv4_forward - a000300,1,
+
+[15:02:51.159] [bmv2] [T] [thread 21394] bm_table_add_entry
+[15:02:51.159] [bmv2] [D] [thread 21394] Entry 0 added to table 'MyIngress.ipv6_lpm'
+[15:02:51.159] [bmv2] [D] [thread 21394] Dumping entry 0
+Match key:
+* hdr.ipv6.dstAddr    : LPM       fe800000000000000000000000000002/128
+Action entry: MyIngress.ipv6_forward - a000101,3,
+
+[15:02:51.160] [bmv2] [T] [thread 21394] bm_table_add_entry
+[15:02:51.160] [bmv2] [D] [thread 21394] Entry 0 added to table 'MyIngress.ipv6_tbl'
+[15:02:51.160] [bmv2] [D] [thread 21394] Dumping entry 0
+Match key:
+* hdr.ipv6.dstAddr    : LPM       fe800000000000000000000000000001/128
+Action entry: MyIngress.add_ipv6_gre_header - 14001804,14001802,
+
+[15:02:51.160] [bmv2] [T] [thread 21394] bm_table_add_entry
+[15:02:51.160] [bmv2] [D] [thread 21394] Entry 0 added to table 'MyIngress.ipv4_tbl'
+[15:02:51.160] [bmv2] [D] [thread 21394] Dumping entry 0
+Match key:
+* hdr.ipv4.dstAddr    : LPM       14001804/32
+Action entry: MyIngress.mov_ipv4_gre_header - 
+
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory

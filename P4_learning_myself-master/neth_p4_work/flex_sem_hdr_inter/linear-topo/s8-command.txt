@@ -1,0 +1,9 @@
+table_set_default ipv4_tbl drop
+
+#table_add ipv4_tbl ipv4_forward 10.0.1.1/32 => 00:00:0a:00:03:00 3
+#table_add ipv4_tbl ipv4_forward 10.0.4.2/32 => 00:00:0a:00:04:02 1
+
+table_add ipv6_lpm ipv6_forward fe80::1/128 => 00:00:0a:00:07:00 1
+table_add ipv6_lpm ipv6_forward fe80::3/128 => 00:00:0a:08:03:02 2
+table_add ipv6_lpm ipv6_forward fe80::7/128 => 00:00:0a:08:04:02 1
+table_add ipv6_lpm ipv6_forward fe80::4/128 => 00:00:0a:00:08:00 3
